@@ -14,3 +14,4 @@ This website should be responsive.
 * MVC description: https://www.tutorialsteacher.com/mvc/mvc-architecture
 * Google maps is the chosen data provider just because I'm more familiar with
 * Bootstrap provides the responsiveness required
+* This can also be done without coding using google custom maps for example
