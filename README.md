@@ -15,3 +15,6 @@ This website should be responsive.
 * Google maps is the chosen data provider just because I'm more familiar with
 * Bootstrap provides the responsiveness required
 * This can also be done without coding using google custom maps for example
+* The information can come from Google maps with a site type filter or from an open dataset
+* The city dataset is not comprehensive
+* In order to get data from google it is required to register a credit card
