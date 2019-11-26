@@ -18,3 +18,4 @@ This website should be responsive.
 * The information can come from Google maps with a site type filter or from an open dataset
 * The city dataset is not comprehensive
 * In order to get data from google it is required to register a credit card
+* It seems that it is possible to get an api key without registering a credit card
