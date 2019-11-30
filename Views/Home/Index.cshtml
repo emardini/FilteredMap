@@ -2,7 +2,55 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="map-canvas" />
+        </div>
+        <div class="col-md-6">
+            Filtered map
+        </div>
+    </div>
+
+<script>
+    var places = @Html.Raw(Json.Serialize(Model));
+
+    $(document).ready(function() {
+        (function () {
+            var options = {
+                zoom: 5,
+                center: new google.maps.LatLng(36.7757501,-76.0939386),
+                mapTypeId: google.maps.MapTypeId.TERRAIN,
+                mapTypeControl: false
+            };
+
+            var map = new google.maps.Map(document.getElementById('map-canvas'), options);
+            var bounds = new google.maps.LatLngBounds();
+
+            for (var i = 0; i < places.length; i++) {
+                // init markers
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(places[i].location.latitude, places[i].location.longitude),
+                    map: map,
+                    title: places[i].name
+                });
+
+                bounds.extend(marker.position);
+
+                // process multiple info windows
+                (function(marker, i) {
+                    // add click event
+                    google.maps.event.addListener(marker, 'click', function() {
+                        infowindow = new google.maps.InfoWindow({
+                            content: places[i].name
+                        });
+                        infowindow.open(map, marker);
+                    });
+                })(marker, i);
+            }
+
+            map.fitBounds(bounds);
+        })();
+    });
+
+</script>
+
