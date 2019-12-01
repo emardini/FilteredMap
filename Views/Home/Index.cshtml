@@ -1,15 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-    <div class="row">
-        <div class="col-md-6">
-            <div id="map-canvas" />
-        </div>
-        <div class="col-md-6">
-            Filtered map
-        </div>
+<div class="row body">
+    <div class="col-sm-6">
+        <div id="map-canvas"></div>
     </div>
+    <div class="col-sm-6 text-center">
+        <h3>Parks</h3>
+        <ul id="place-list">
+        </ul>
+    </div>
+</div>
 
 <script>
     var places = @Html.Raw(Json.Serialize(Model));
@@ -18,16 +19,15 @@
         (function () {
             var options = {
                 zoom: 5,
-                center: new google.maps.LatLng(36.7757501,-76.0939386),
                 mapTypeId: google.maps.MapTypeId.TERRAIN,
                 mapTypeControl: false
             };
 
             var map = new google.maps.Map(document.getElementById('map-canvas'), options);
             var bounds = new google.maps.LatLngBounds();
+            var placeListUl = document.getElementById('place-list');
 
             for (var i = 0; i < places.length; i++) {
-                // init markers
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(places[i].location.latitude, places[i].location.longitude),
                     map: map,
@@ -36,19 +36,30 @@
 
                 bounds.extend(marker.position);
 
-                // process multiple info windows
-                (function(marker, i) {
-                    // add click event
-                    google.maps.event.addListener(marker, 'click', function() {
-                        infowindow = new google.maps.InfoWindow({
-                            content: places[i].name
-                        });
-                        infowindow.open(map, marker);
-                    });
-                })(marker, i);
+                var li = document.createElement('li');
+                li.innerHTML = li.innerHTML + places[i].name;
+                placeListUl.appendChild(li);
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: places[i].name
+                });
+
+                (function (infowindow, marker, li) {
+                    google.maps.event.addListener(marker, 'click', function () {infowindow.open(map, marker);});
+                    $(li)
+                        .hover(function () {
+                             $(this).css("font-weight", "bold");
+                             infowindow.open(map, marker);
+                        }, function () {
+                            $(this).css("font-weight", "normal");
+                            infowindow.close();
+                        }
+                );
+                })(infowindow, marker, li);
             }
 
             map.fitBounds(bounds);
+
         })();
     });
 
