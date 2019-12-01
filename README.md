@@ -1,7 +1,7 @@
-# FilteredMap
-Create a C# / .NET Core website that pulls parks from a public API and displays them on the page.  
-Display a map with pins and an accompanying list.  
-This website should be responsive.  
+# Requirements
+* Create a C# / .NET Core website that pulls parks from a public API and displays them on the page.  
+* Display a map with pins and an accompanying list.  
+* This website should be responsive.  
 
 ## Assumptions
 * The map will be interactive
@@ -16,4 +16,5 @@ This website should be responsive.
 * Bootstrap provides the required responsivenes
 * This can also be done without coding using google custom maps for example :)
 * The google places dataset is not comprehensive
-* The demo does nor include localization, the string resources are hardcoded
+* The demo does not include localization, the string resources are hardcoded
+* There is no meaninngful business logic that requires unit testing, the code is mainly plumbing
