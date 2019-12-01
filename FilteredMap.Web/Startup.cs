@@ -1,3 +1,6 @@
+
+using FilteredMap.Core;
+using FilteredMap.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +22,11 @@ namespace FilteredMap.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //Infrastructure specific configuration
+            string searchApiKey = Configuration["GoogleSettings:PlacesApiKey"];
+            var placesSearch = new GooglePlaceSearch(searchApiKey);
+            services.AddSingleton<IPlaceSearch>(x => placesSearch);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,4 +8,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FilteredMap.Core\FilteredMap.Core.csproj" />
+    <ProjectReference Include="..\FilteredMap.Infrastructure\FilteredMap.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

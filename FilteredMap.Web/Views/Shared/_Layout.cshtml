@@ -4,9 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>@ViewData["Title"] - FilteredMap</title>
+    <title>@ViewData["Title"] - Filtered Map</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtbBkcrGo97HSiQRD3seMq3NxwD6K5RWA"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtbBkcrGo97HSiQRD3seMq3NxwD6K5RWA"></script>
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -18,8 +19,8 @@
         }
 
         ul {
-          list-style: none;
-          padding: 0;
+            list-style: none;
+            padding: 0;
         }
     </style>
 </head>
@@ -27,7 +28,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">filteredMap</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Filtered Map</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -53,7 +54,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2019 - filteredMap - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2019 - Filtered Map - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
