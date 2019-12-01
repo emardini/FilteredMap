@@ -1,15 +1,15 @@
 ﻿
-using System.Diagnostics;
+using FilteredMap.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using filteredMap.Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using System.Linq;
 
-namespace filteredMap.Controllers
+namespace FilteredMap.Web.Controllers
 {
     public class HomeController : Controller
     {

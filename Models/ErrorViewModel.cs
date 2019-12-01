@@ -1,6 +1,4 @@
-using System;
-
-namespace filteredMap.Models
+namespace FilteredMap.Web.Models
 {
     public class ErrorViewModel
     {
