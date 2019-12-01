@@ -10,12 +10,10 @@ This website should be responsive.
 
 
 ## Comments log
-* This site could have been entirely done with any javascript framework, but for the sake of the demo it will be created as a .net core MVC site, it may bbe advantageous to build it with MVC so that we can keep the google api Key secret.
+* This site could have been entirely done with any javascript framework, but for the sake of the demo it will be created as a .net core MVC site
 * MVC description: https://www.tutorialsteacher.com/mvc/mvc-architecture
 * Google maps is the chosen data provider just because I'm more familiar with
-* Bootstrap provides the responsiveness required
-* This can also be done without coding using google custom maps for example
-* The information can come from Google maps with a site type filter or from an open dataset
-* The city dataset is not comprehensive
-* In order to get data from google it is required to register a credit card
-* It seems that it is possible to get an api key without registering a credit card
+* Bootstrap provides the required responsivenes
+* This can also be done without coding using google custom maps for example :)
+* The google places dataset is not comprehensive
+* The demo does nor include localization, the string resources are hardcoded
